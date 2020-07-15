@@ -5,6 +5,16 @@ import UserInPut from './UserInput/UserInput';
 import UserOutPut from './UserOutput/UserOutput';
 
 class App extends Component {
+
+  state = {
+    username : 'Nil'
+  }
+
+  nameChangeHandler = (event) =>{
+    this.setState({ 
+      username: event.target.value
+    });
+  }
   render(){
     return (
       <div className="App">
@@ -21,9 +31,13 @@ class App extends Component {
             <li>Add styling of your choice to your components/ elements in the components - both with inline styles and stylesheets</li>
           </ol>
 
-          <UserInPut></UserInPut>
-          <UserOutPut></UserOutPut>
-          <UserOutPut></UserOutPut>
+          <UserInPut
+            change={this.nameChangeHandler}
+            currname ={this.state.username}></UserInPut>
+          <UserOutPut
+            username='Ketul'></UserOutPut>
+          <UserOutPut
+            username={this.state.username}></UserOutPut>
           <UserOutPut></UserOutPut>
           <UserOutPut></UserOutPut>
       </div>
