@@ -8,3 +8,5 @@ const useroutput = () => {
         </div>
     );
 }
+
+export default useroutput;
